@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lemonca - Together for a Greener Future</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #2F4F4F 0%, #4A6B6B 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(47, 79, 79, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: #F4D03F;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #E8E8E8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #F4D03F;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #F4D03F;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #F4D03F;
+            color: #2F4F4F;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(244, 208, 63, 0.3);
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: rgba(74, 107, 107, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #F4D03F;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #E8E8E8;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: #4A6B6B;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #F4D03F;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: rgba(47, 79, 79, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #F4D03F;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #F4D03F;
+        }
+
+        .feature-description {
+            color: #E8E8E8;
+            line-height: 1.6;
+        }
+
+        /* App Screenshots */
+        .screenshots {
+            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .screenshot {
+            background: #4A6B6B;
+            border-radius: 20px;
+            padding: 1rem;
+            text-align: center;
+            color: white;
+        }
+
+        .screenshot img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2F4F4F;
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #F4D03F;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #E8E8E8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #F4D03F;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #4A6B6B;
+            color: #E8E8E8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">🍋 Lemonca</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#download">Download</a></li>
+                <li><a href="code-of-conduct.html">Code of Conduct</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="fade-in-up">Join the Journey Towards a Greener World</h1>
+            <p class="fade-in-up">We are a community that's determined to invite everyone to participate in the Go Green movement. Together, we can make a difference for our planet.</p>
+            <a href="#download" class="cta-button fade-in-up">Download Lemonca</a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card fade-in-up">
+                    <div class="stat-number">8.2M</div>
+                    <div class="stat-label">Tons of plastic waste produced annually</div>
+                </div>
+                <div class="stat-card fade-in-up">
+                    <div class="stat-number">1.54M</div>
+                    <div class="stat-label">Species endangered by climate change</div>
+                </div>
+                <div class="stat-card fade-in-up">
+                    <div class="stat-number">+1°C</div>
+                    <div class="stat-label">Global temperature increase per year</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Lemonca?</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">🌱</div>
+                    <h3 class="feature-title">Community Dedicated</h3>
+                    <p class="feature-description">Join a passionate community of environmental advocates working together to create positive change.</p>
+                </div>
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">♻️</div>
+                    <h3 class="feature-title">Sustainable Initiatives</h3>
+                    <p class="feature-description">Participate in real environmental campaigns and track your impact on the planet.</p>
+                </div>
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">🌍</div>
+                    <h3 class="feature-title">Eco-Friendly Products</h3>
+                    <p class="feature-description">Discover and support sustainable products and practices that benefit our environment.</p>
+                </div>
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Environmental Dashboard</h3>
+                    <p class="feature-description">Monitor air quality, water quality, biodiversity, and climate data in real-time.</p>
+                </div>
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">🏆</div>
+                    <h3 class="feature-title">Daily Challenges</h3>
+                    <p class="feature-description">Complete daily environmental challenges to earn points and make a difference.</p>
+                </div>
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">🌿</div>
+                    <h3 class="feature-title">Green Campaigns</h3>
+                    <p class="feature-description">Join environmental campaigns and track your participation and impact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Screenshots -->
+    <section class="screenshots">
+        <div class="container">
+            <h2 class="section-title">App Features</h2>
+            <div class="screenshots-grid">
+                <div class="screenshot fade-in-up">
+                    <img src="assets/lem1.png" alt="Lemonca App Screenshot 1">
+                    <h3>Environmental Dashboard</h3>
+                    <p>Real-time environmental data and insights</p>
+                </div>
+                <div class="screenshot fade-in-up">
+                    <img src="assets/lembaner.png" alt="Lemonca App Screenshot 2">
+                    <h3>Campaign Participation</h3>
+                    <p>Join and track environmental campaigns</p>
+                </div>
+                <div class="screenshot fade-in-up">
+                    <img src="assets/lem.png" alt="Lemonca App Screenshot 3">
+                    <h3>Daily Challenges</h3>
+                    <p>Complete challenges to earn points</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="features" id="download">
+        <div class="container">
+            <h2 class="section-title">Get Started Today</h2>
+            <div style="text-align: center; color: white;">
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">Download Lemonca and start making a difference for our planet.</p>
+                <a href="#" class="cta-button">Download for iOS</a>
+                <a href="#" class="cta-button" style="margin-left: 1rem;">Download for Android</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Lemonca</h3>
+                    <p style="color: #E8E8E8; margin-bottom: 1rem;">Together for a Greener Future</p>
+                    <p style="color: #E8E8E8; font-size: 0.9rem;">Join our community in making the world a better place through environmental awareness and action.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Features</h3>
+                    <ul>
+                        <li><a href="#features">Environmental Dashboard</a></li>
+                        <li><a href="#features">Campaigns</a></li>
+                        <li><a href="#features">Daily Challenges</a></li>
+                        <li><a href="#features">Air Quality Monitoring</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="code-of-conduct.html">Code of Conduct</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="#support">Support</a></li>
+                        <li><a href="#community">Community</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#newsletter">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Lemonca. All rights reserved. | Version 1.0.0</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in-up elements
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
